@@ -22,27 +22,27 @@ pipeline {
             //when {
             //    branch 'master'
            // }
-            //steps {
+            steps {echo 'Running build automation -artifact'
              //   script {
                //     app = docker.build(DOCKER_IMAGE_NAME)
                  //   app.inside {
                    //     sh 'echo Hello, World!'
                     //}
                 //}
-            //}
+            }
         }
         stage('Push Docker Image') {
             //when {
               //  branch 'master'
             //}
-            //steps {
+            steps {echo 'Running build automation -artifact'
               //  script {
                 //    docker.withRegistry('https://registry.hub.docker.com', 'docker_hub_login') {
                   //      app.push("${env.BUILD_NUMBER}")
                     //    app.push("latest")
                     //}
                 //}
-            //}
+            }
         }
         stage('CanaryDeploy') {
             //when {
@@ -51,13 +51,13 @@ pipeline {
             //environment { 
               //  CANARY_REPLICAS = 1
             //}
-            //steps {
+            steps {echo 'Running build automation -artifact'
               //  kubernetesDeploy(
                 //    kubeconfigId: 'kubeconfig',
                   //  configs: 'train-schedule-kube-canary.yml',
                     //enableConfigSubstitution: true
                 //)
-            //}
+            }
         }
         stage('DeployToProduction') {
             //when {
@@ -66,7 +66,7 @@ pipeline {
             //environment { 
               //  CANARY_REPLICAS = 0
             //}
-            //steps {
+            steps {echo 'Running build automation -artifact'
               //  input 'Deploy to Production?'
                // milestone(1)
                 //kubernetesDeploy(
@@ -79,7 +79,7 @@ pipeline {
                   //  configs: 'train-schedule-kube.yml',
                     //enableConfigSubstitution: true
                 //)
-            //}
+            }
         }
     }
 }
