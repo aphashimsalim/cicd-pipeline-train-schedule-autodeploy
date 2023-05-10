@@ -8,6 +8,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Running build automation'
+                sh 'sleep 150'
                 //sh './gradlew build --no-daemon ; gradle --stop'
                 //archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }}
