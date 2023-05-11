@@ -15,6 +15,7 @@ pipeline {
         stage('Build - artifact') {
             steps {
                 echo 'Running build automation -artifact'
+                sh 'sleep 150'
                 
                 //archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
